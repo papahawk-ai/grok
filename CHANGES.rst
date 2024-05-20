@@ -1,12 +1,41 @@
 Grok changes
 ************
 
-4.1 (unreleased)
+5.1 (unreleased)
 ================
+
+- Nothing changed yet.
+
+
+5.0 (2024-01-29)
+================
+
+Breaking changes
+----------------
+
+- Drop dependency on archived packages:
+
+  - ``grokcore.xmlrpc``
+
+  - ``grokcore.rest``
+
+  - ``grokcore.json``
+
+  - ``grokui.admin`` (only used in grokwiki example project)
+
+Fixes
+-----
 
 - Fix GrokWiki example app.
 
 - Fix installation documentation.
+
+Changes
+-------
+
+- Split ``default.zcml`` off ``configure.zcml`` for easier exclude.
+
+- Split ``dependencies.zcml`` off ``configure.zcml`` for easier reuse.
 
 
 4.0 (2023-12-19)

@@ -5,7 +5,8 @@ from setuptools import setup
 
 
 def read(*rnames):
-    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+    with open(os.path.join(os.path.dirname(__file__), *rnames)) as f:
+        return f.read()
 
 
 long_description = (
@@ -24,7 +25,7 @@ tests_require = [
 
 setup(
     name='grok',
-    version='4.1.dev0',
+    version='5.1.dev0',
     author='Grok Team',
     author_email='zope-dev@zope.dev',
     url='https://github.com/zopefoundation/grok',
@@ -63,17 +64,14 @@ setup(
         'grokcore.component >= 3.1',
         'grokcore.content >= 1.2',
         'grokcore.formlib >= 1.10',
-        'grokcore.json >= 1.2',
         'grokcore.layout >= 1.6',
         'grokcore.message',
-        'grokcore.rest >= 1.3',
         'grokcore.security[role] >= 1.6',
         'grokcore.site >= 1.7',
         'grokcore.traverser >= 1.1',
         'grokcore.view [security_publication]',
         'grokcore.view >= 2.8',
         'grokcore.viewlet >= 1.10',
-        'grokcore.xmlrpc >= 1.2',
         'martian >= 1.2',
         'pytz',
         'setuptools',
@@ -110,7 +108,6 @@ setup(
         'zope.site',
         'zope.traversing',
         ],
-    tests_require=tests_require,
     extras_require={
         'test': tests_require,
         'docs': ['Sphinx']
